@@ -8,4 +8,5 @@
 	<div class="entry-content clearfix">
 		<?php the_content(); ?>
 	</div>
+	<?php dynamic_sidebar('single-1'); ?>
 </article>

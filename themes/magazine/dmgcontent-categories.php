@@ -1,9 +1,7 @@
 <h4 class="widget-title">
 	<?php 
 		$currenCatName = single_cat_title("", false);
-		// Get the ID of a given category
 	    $category_id = get_cat_ID( $currenCatName );
-	    // Get the URL of this category
 	    $category_link = get_category_link( $category_id );
 	?>
 	<a href="<?php echo esc_url( $category_link ); ?>" class="category-title">
