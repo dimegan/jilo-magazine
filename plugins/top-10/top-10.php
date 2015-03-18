@@ -825,17 +825,22 @@ function tptn_pop_posts( $args ) {
 				 * @param	object	$result				Object of the current post result
 				 */
 				$target_attribute = apply_filters( 'tptn_rel_attribute', $target_attribute, $result );
-
+				/**** DMG *****/
+				$output .= '<article class="cp-wrap cp-small clearfix">
+						<div class="cp-thumb-small">
+							<a href="' . get_permalink( $postid ) .'" title=" ' . $post_title . '">';
 
 				if ( 'after' == $post_thumb_op ) {
-					$output .= '<a href="' . get_permalink( $postid ) . '" rel="' . $rel_attribute . '" ' . $target_attribute . 'class="tptn_link">'; // Add beginning of link
+					/*$output .= '<a href="' . get_permalink( $postid ) . '" rel="' . $rel_attribute . '" ' . $target_attribute . 'class="tptn_link">'; // Add beginning of link
 					$output .= '<span class="tptn_title">' . $post_title . '</span>'; // Add title if post thumbnail is to be displayed after
 					$output .= '</a>'; // Close the link
+					*/
+					
 				}
 
 				if ( 'inline' == $post_thumb_op || 'after' == $post_thumb_op || 'thumbs_only' == $post_thumb_op ) {
-					$output .= '<a href="' . get_permalink( $postid ) . '" rel="' . $rel_attribute . '" ' . $target_attribute . 'class="tptn_link">'; // Add beginning of link
-
+					//$output .= '<a href="' . get_permalink( $postid ) . '" rel="' . $rel_attribute . '" ' . $target_attribute . 'class="tptn_link">'; // Add beginning of link
+					/*
 					$output .= tptn_get_the_post_thumbnail( array(
 						'postid' => $postid,
 						'thumb_height' => $thumb_height,
@@ -850,17 +855,29 @@ function tptn_pop_posts( $args ) {
 						'class' => "tptn_thumb",
 						'filter' => "tptn_postimage",
 					) );
-
+					
 					$output .= '</a>'; // Close the link
-				}
+					*/
 
+					//TODO: PREVENT WHEN DOES NOT HAVE A THUMB IMG
+					$output .= get_the_post_thumbnail($postid, 'cp-thumb-small');
+				}
+				/***** DMG *****/
+				$output .= '</a>
+						</div>
+						<p class="entry-meta"><span class="updated">' . mysql2date( get_option( 'date_format', 'd/m/y' ), $result->post_date ) . '</span></p>
+						<h3 class="cp-title-small"><a href="' . get_permalink( $postid ) . '" title="' . $post_title . '" rel="bookmark">
+						' . $post_title .'
+						</a></h3>
+					</article>';
+/*
 				if ( 'inline' == $post_thumb_op || 'text_only' == $post_thumb_op ) {
 					$output .= '<span class="tptn_after_thumb">';
 					$output .= '<a href="' . get_permalink( $postid ) . '" rel="' . $rel_attribute . '" ' . $target_attribute . 'class="tptn_link">'; // Add beginning of link
 					$output .= '<span class="tptn_title">' . $post_title . '</span>'; // Add title when required by settings
 					$output .= '</a>'; // Close the link
 				}
-
+*/
 				if ( $show_author ) {
 					$author_info = get_userdata( $result->post_author );
 					$author_name = ucwords( trim( stripslashes( $author_info->display_name ) ) );

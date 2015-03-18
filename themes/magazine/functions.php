@@ -36,11 +36,12 @@ if (!function_exists('mh_newsdesk_lite_themes_setup')) {
 		add_theme_support('html5', array( 'search-form'));
 		add_theme_support('custom-background', array('default-color' => 'efefef'));
 		add_theme_support('post-thumbnails');
+
+		add_image_size('cp-thumb-small', 120, 67, true);
 		/*DMG: is not used and when is active save extra images*/
 		/*
 		add_image_size('content-single', 777, 437, true);
 		add_image_size('content-list', 260, 146, true);
-		add_image_size('cp-thumb-small', 120, 67, true);
 		*/
 		register_nav_menus(array(
 			'main_nav' => __('Main Navigation', 'mh-newsdesk-lite'),
