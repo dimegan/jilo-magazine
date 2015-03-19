@@ -827,57 +827,23 @@ function tptn_pop_posts( $args ) {
 				$target_attribute = apply_filters( 'tptn_rel_attribute', $target_attribute, $result );
 				/**** DMG *****/
 				$output .= '<article class="cp-wrap cp-small clearfix">
-						<div class="cp-thumb-small">
-							<a href="' . get_permalink( $postid ) .'" title=" ' . $post_title . '">';
-
-				if ( 'after' == $post_thumb_op ) {
-					/*$output .= '<a href="' . get_permalink( $postid ) . '" rel="' . $rel_attribute . '" ' . $target_attribute . 'class="tptn_link">'; // Add beginning of link
-					$output .= '<span class="tptn_title">' . $post_title . '</span>'; // Add title if post thumbnail is to be displayed after
-					$output .= '</a>'; // Close the link
-					*/
-					
-				}
+								';
 
 				if ( 'inline' == $post_thumb_op || 'after' == $post_thumb_op || 'thumbs_only' == $post_thumb_op ) {
-					//$output .= '<a href="' . get_permalink( $postid ) . '" rel="' . $rel_attribute . '" ' . $target_attribute . 'class="tptn_link">'; // Add beginning of link
-					/*
-					$output .= tptn_get_the_post_thumbnail( array(
-						'postid' => $postid,
-						'thumb_height' => $thumb_height,
-						'thumb_width' => $thumb_width,
-						'thumb_meta' => $thumb_meta,
-						'thumb_html' => $thumb_html,
-						'thumb_default' => $thumb_default,
-						'thumb_default_show' => $thumb_default_show,
-						'thumb_timthumb' => $thumb_timthumb,
-						'thumb_timthumb_q' => $thumb_timthumb_q,
-						'scan_images' => $scan_images,
-						'class' => "tptn_thumb",
-						'filter' => "tptn_postimage",
-					) );
-					
-					$output .= '</a>'; // Close the link
-					*/
+					$post_img = get_the_post_thumbnail($postid, 'cp-thumb-small');
+					//PREVENT WHEN DOES NOT HAVE A THUMB IMG
+					if($post_img !== ''){
+						$output .= '<div class="cp-thumb-small">
+										<a href="' . get_permalink( $postid ) .'" title=" ' . $post_title . '">'
+											. $post_img .
+										'</a>
+									</div>';
+					}
+				}
+				//else is 'text_only' == $post_thumb_op
 
-					//TODO: PREVENT WHEN DOES NOT HAVE A THUMB IMG
-					$output .= get_the_post_thumbnail($postid, 'cp-thumb-small');
-				}
-				/***** DMG *****/
-				$output .= '</a>
-						</div>
-						<p class="entry-meta"><span class="updated">' . mysql2date( get_option( 'date_format', 'd/m/y' ), $result->post_date ) . '</span></p>
-						<h3 class="cp-title-small"><a href="' . get_permalink( $postid ) . '" title="' . $post_title . '" rel="bookmark">
-						' . $post_title .'
-						</a></h3>
-					</article>';
-/*
-				if ( 'inline' == $post_thumb_op || 'text_only' == $post_thumb_op ) {
-					$output .= '<span class="tptn_after_thumb">';
-					$output .= '<a href="' . get_permalink( $postid ) . '" rel="' . $rel_attribute . '" ' . $target_attribute . 'class="tptn_link">'; // Add beginning of link
-					$output .= '<span class="tptn_title">' . $post_title . '</span>'; // Add title when required by settings
-					$output .= '</a>'; // Close the link
-				}
-*/
+				$post_details = '';
+
 				if ( $show_author ) {
 					$author_info = get_userdata( $result->post_author );
 					$author_name = ucwords( trim( stripslashes( $author_info->display_name ) ) );
@@ -905,24 +871,41 @@ function tptn_pop_posts( $args ) {
 					 */
 					$tptn_author = apply_filters( 'tptn_author', $tptn_author, $author_info );
 
-					$output .= $tptn_author;
+					$post_details .= $tptn_author;
 				}
 
 				if ( $show_date ) {
-					$output .= '<span class="tptn_date"> ' . mysql2date( get_option( 'date_format', 'd/m/y' ), $result->post_date ).'</span> ';
-				}
-
-				if ( $show_excerpt ) {
-					$output .= '<span class="tptn_excerpt"> ' . tptn_excerpt( $postid, $excerpt_length ).'</span>';
+					$post_details .= '<span class="tptn_date"> ' . mysql2date( get_option( 'date_format', 'd/m/y' ), $result->post_date ).'</span> ';
 				}
 
 				if ( $disp_list_count ) {
-					$output .= ' <span class="tptn_list_count">(' . number_format_i18n( $sumcount ) . ')</span>';
+					$post_details .= ' <span class="tptn_list_count">(' . number_format_i18n( $sumcount ) . ')</span>';
 				}
 
-				if ( 'inline' == $post_thumb_op || 'text_only' == $post_thumb_op ) {
-					$output .= '</span>';
+				$post_summary = '';
+
+				if ( $show_excerpt ) {
+					$post_summary = '<div class="post-summary">
+										<a href="' . get_permalink( $postid ) . '" title="' . $post_title . '" rel="bookmark">
+											<p>' . tptn_excerpt( $postid, $excerpt_length ).'</p>
+										</a>
+									</div>';
 				}
+
+				/***** DMG *****/
+				$output .= '
+						<p class="entry-meta">
+							<span class="updated">' 
+								. $post_details . 
+							'</span>
+						</p>
+						<h3 class="cp-title-small">
+							<a href="' . get_permalink( $postid ) . '" title="' . $post_title . '" rel="bookmark">
+							' . $post_title .'
+							</a>
+						</h3>'
+						. $post_summary .
+					'</article>';
 
 				/**
 				 * Filter the closing tag of each list item.
