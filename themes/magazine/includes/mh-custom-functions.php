@@ -105,7 +105,7 @@ if (!function_exists('mh_newsdesk_lite_post_meta')) {
 				echo sprintf(_x('%s', 'post category', 'mh-newsdesk-lite'), '<span class="entry-meta-cats">' . get_the_category_list(', ', '') . '</span>') . "\n";
 			}
 			if (is_single()) {
-				echo '<span class="entry-meta-author vcard author">' . sprintf(_x('Posted By: %s', 'post author', 'mh-newsdesk-lite'), '<a class="fn" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a>') . '</span>' . "\n";
+				echo '<span class="entry-meta-author vcard author">' . sprintf(_x('Publicado por: %s', 'post author', 'mh-newsdesk-lite'), '<a class="fn" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a>') . '</span>' . "\n";
 			}
 			echo '<span class="entry-meta-date updated">' . get_the_date() . '</span>' . "\n";
 		echo '</p>' . "\n";
@@ -213,14 +213,14 @@ if (!function_exists('mh_newsdesk_lite_postnav')) {
 							previous_image_link('%link', '<i class="fa fa-chevron-left"></i>' . __('Previous image', 'mh-newsdesk-lite'));
 						}
 					} else {
-						previous_post_link('%link', '<i class="fa fa-chevron-left"></i>' . __('Previous post', 'mh-newsdesk-lite'));
+						previous_post_link('%link', '<i class="fa fa-chevron-left"></i>' . __('Anterior entrada', 'mh-newsdesk-lite'));
 					}
 				echo '</li>' . "\n";
 				echo '<li class="post-nav-next">' . "\n";
 					if ($attachment) {
 						next_image_link('%link', __('Next image', 'mh-newsdesk-lite') . '<i class="fa fa-chevron-right"></i>');
 					} else {
-						next_post_link('%link', __('Next post', 'mh-newsdesk-lite') . '<i class="fa fa-chevron-right"></i>');
+						next_post_link('%link', __('Siguiente entrada', 'mh-newsdesk-lite') . '<i class="fa fa-chevron-right"></i>');
 					}
 				echo '</li>' . "\n";
 			echo '</ul>' . "\n";

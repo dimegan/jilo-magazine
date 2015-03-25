@@ -298,7 +298,7 @@ msgstr ""
 
 # @ mh-newsdesk-lite
 #: includes/mh-custom-functions.php:223
-msgid "Next post"
+msgid "Siguiente post"
 msgstr ""
 
 # @ mh-newsdesk-lite

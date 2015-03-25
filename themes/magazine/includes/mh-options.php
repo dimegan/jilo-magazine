@@ -98,7 +98,7 @@ if (!function_exists('mh_newsdesk_lite_default_options')) {
 	function mh_newsdesk_lite_default_options() {
 		$default_options = array(
 			'excerpt_length' => '35',
-			'excerpt_more' => __('Read More', 'mh-newsdesk-lite'),
+			'excerpt_more' => __('Leer mas', 'mh-newsdesk-lite'),
 			'sidebar' => 'right'
 		);
 		return $default_options;
