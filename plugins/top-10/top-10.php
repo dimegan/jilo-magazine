@@ -1062,8 +1062,8 @@ function tptn_default_options() {
 		'add_to_tag_archives' => false,		// Add post count to tag archives
 		'add_to_archives' => false,		// Add post count to other archives
 
-		'count_disp_form' => '(Visited %totalcount% times, %dailycount% visits today)',	// Format to display the count
-		'count_disp_form_zero' => 'No visits yet',	// What to display where there are no hits?
+		'count_disp_form' => '(Label)',	// Format to display the count
+		'count_disp_form_zero' => 'No ha sido visitado',	// What to display where there are no hits?
 		'dynamic_post_count' => false,		// Use JavaScript for displaying the post count
 
 		'track_authors' => false,			// Track Authors visits
