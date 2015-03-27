@@ -102,11 +102,22 @@ add_action('admin_enqueue_scripts', 'mh_newsdesk_lite_admin_scripts');
 /***** Register Widget Areas / Sidebars	*****/
 
 if (!function_exists('mh_newsdesk_lite_widgets_init')) {
-	function mh_newsdesk_lite_widgets_init() {
+	function mh_newsdesk_lite_widgets_init() {	
+
 		register_sidebar(array('name' => __('Global Sidebar', 'mh-newsdesk-lite'), 'id' => 'sidebar', 'description' => __('Sidebar used for sponsor.', 'mh-newsdesk-lite'), 'before_widget' => '<div class="sb-widget clearfix">', 'after_widget' => '</div>', 'before_title' => '<h4 class="widget-title"><span>', 'after_title' => '</span></h4>'));
 		register_sidebar(array('name' => __('Home - Sponsor in the middle', 'mh-newsdesk-lite'), 'id' => 'home-1', 'description' => __('Large column on Homepage.', 'mh-newsdesk-lite'), 'before_widget' => '<div class="sb-widget">', 'after_widget' => '</div>', 'before_title' => '<h4 class="widget-title"><span>', 'after_title' => '</span></h4>'));
 		register_sidebar(array('name' => __('Home - Sponsor in the end', 'mh-newsdesk-lite'), 'id' => 'home-2', 'description' => __('Large column on Homepage.', 'mh-newsdesk-lite'), 'before_widget' => '<div class="sb-widget">', 'after_widget' => '</div>', 'before_title' => '<h4 class="widget-title"><span>', 'after_title' => '</span></h4>'));
 		register_sidebar(array('name' => __('Single - Sponsor in the end', 'mh-newsdesk-lite'), 'id' => 'single-1', 'description' => __('Large column on Homepage.', 'mh-newsdesk-lite'), 'before_widget' => '<div class="sb-widget">', 'after_widget' => '</div>', 'before_title' => '<h4 class="widget-title"><span>', 'after_title' => '</span></h4>'));
+
+		$args = array(
+	        'name'          => 'Header Widget Zone',
+	        'id'            => 'header-widget-zone',
+	        'description'   => '',
+	        'before_widget' => '<div class="side-nav header-widget-zone">',
+	        'after_widget'  => '</div>',
+	        'before_title'  => '<h2 class="widgettitle">',
+	        'after_title'   => '</h2>' );
+	    register_sidebar($args);
 	}
 }
 add_action('widgets_init', 'mh_newsdesk_lite_widgets_init');
@@ -144,21 +155,20 @@ if (is_admin()) {
 	require_once('admin/admin.php');
 }
 
-?>
+//Function for made small the title
+function the_titlesmall($before = '', $after = '', $echo = true, $length = false) { $title = get_the_title();
 
-<?php
-//We hook our action on widgets_init
-add_action('widgets_init','jplana_widgets_init');
+	if ( $length && is_numeric($length) ) {
+		$title = substr( $title, 0, $length );
+	}
 
-function jplana_widgets_init(){
-    $args = array(
-        'name'          => 'Header Widget Zone',
-        'id'            => 'header-widget-zone',
-        'description'   => '',
-        'before_widget' => '<div class="side-nav header-widget-zone">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h2 class="widgettitle">',
-        'after_title'   => '</h2>' );
-    register_sidebar($args);
+	if ( strlen($title)> 0 ) {
+		$title = apply_filters('the_titlesmall', $before . $title . $after, $before, $after);
+		if ( $echo )
+			echo $title;
+		else
+			return $title;
+	}
 }
+
 ?>

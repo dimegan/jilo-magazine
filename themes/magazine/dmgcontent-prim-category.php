@@ -7,7 +7,9 @@
     </div>
      <!-- post Tittle-->
      <h2>
-     	<a href="<?php the_permalink();?>" title="<?php the_title_attribute();?>" ><?php the_title(); ?></a>
+     	<a href="<?php the_permalink();?>" title="<?php the_title_attribute();?>" >
+            <?php the_titlesmall('', '...', true, '50')  ?>
+        </a>
      </h2>
      <!-- post Date-->
      <p class="category-date"><?php the_time('l F d, Y');?></p>
