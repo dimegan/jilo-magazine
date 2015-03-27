@@ -156,19 +156,13 @@ if (is_admin()) {
 }
 
 //Function for made small the title
-function the_titlesmall($before = '', $after = '', $echo = true, $length = false) { $title = get_the_title();
-
-	if ( $length && is_numeric($length) ) {
-		$title = substr( $title, 0, $length );
-	}
-
-	if ( strlen($title)> 0 ) {
-		$title = apply_filters('the_titlesmall', $before . $title . $after, $before, $after);
-		if ( $echo )
-			echo $title;
-		else
-			return $title;
-	}
+function the_titlesmall($length) { 
+	$title = get_the_title();
+	if (strlen($title) > $length) {
+        echo substr(the_title($before = '', $after = '', FALSE), 0, $length) . '...'; 
+    } else {
+        the_title();
+    }
 }
 
 ?>
