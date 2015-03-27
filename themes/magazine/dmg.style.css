@@ -203,3 +203,7 @@ a:hover {
 
 /* Hola mundo!! */
 /* Mensaje de diego 2.0*/
+.boxInline
+{
+  float: right;
+}

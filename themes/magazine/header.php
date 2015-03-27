@@ -22,9 +22,17 @@
 	<!-- END PLUGIN COMMENTS -->
 <div id="mh-wrapper">
 <header class="mh-header">
-	<div class="header-wrap clearfix">
-		<?php mh_newsdesk_lite_logo(); ?>
+	<div class="header-wrap clearfix contentDiv">
+		<!-- WIDGET ICONS SOCIAL -->
+		<div class="boxInline">
+			<?php if ( ! dynamic_sidebar( 'header-widget-zone' ) ) {} ?>
+		</div>
+		<div>
+			<?php mh_newsdesk_lite_logo(); ?>
+		</div>
+		
 	</div>
+
 	<div class="header-menu clearfix">
 		<nav class="main-nav clearfix">
 			<?php wp_nav_menu(array('theme_location' => 'main_nav')); ?>
