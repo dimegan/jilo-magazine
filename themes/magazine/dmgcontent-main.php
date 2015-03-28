@@ -1,11 +1,11 @@
 <div>
 	<div class="clearfix">
 		<div class="category-style">
-			<?php query_posts('category_name=deportes&showposts=3');?>
+			<?php query_posts('category_name=Jilotepec&showposts=3');?>
 			 <?php get_template_part('dmgcontent','categories'); ?>
 		</div>
 		<div class="category-style">
-			<?php query_posts('category_name=politica&showposts=3');?>
+			<?php query_posts('category_name=Aculco&showposts=3');?>
 			 <?php get_template_part('dmgcontent','categories'); ?>
 		</div>
 	</div>
@@ -15,11 +15,11 @@
 	</div>
 	<div class="clearfix">
 		<div class="category-style">
-			<?php query_posts('category_name=noticias&showposts=3');?>
+			<?php query_posts('category_name=Soyaniquilpan&showposts=3');?>
 			 <?php get_template_part('dmgcontent','categories'); ?>
 		</div>
 		<div class="category-style">
-			<?php query_posts('category_name=politica&showposts=3');?>
+			<?php query_posts('category_name=Chapa de mota&showposts=3');?>
 			 <?php get_template_part('dmgcontent','categories'); ?>
 		</div>
 	</div>
