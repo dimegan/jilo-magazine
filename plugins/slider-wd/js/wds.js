@@ -6,6 +6,7 @@ function spider_ajax_save(form_id, event) {
   post_data["task"] = "apply";
   /* Global.*/
   post_data["current_id"] = jQuery("#current_id").val();
+  post_data["nonce_wd"] = jQuery("#nonce_wd").val();
   post_data["slide_ids_string"] = jQuery("#slide_ids_string").val();
   post_data["del_slide_ids_string"] = jQuery("#del_slide_ids_string").val();
   post_data["nav_tab"] = jQuery("#nav_tab").val();
@@ -36,6 +37,8 @@ function spider_ajax_save(form_id, event) {
   post_data["image_right_click"] = jQuery("input[name=image_right_click]:checked").val();
   post_data["layer_out_next"] = jQuery("input[name=layer_out_next]:checked").val();
   post_data["published"] = jQuery("input[name=published]:checked").val();
+  post_data["start_slide_num"] = jQuery("#start_slide_num").val();
+  post_data["effect_duration"] = jQuery("#effect_duration").val();
 
   /* Navigation.*/
   post_data["prev_next_butt"] = jQuery("input[name=prev_next_butt]:checked").val();
@@ -293,7 +296,8 @@ function wds_success(form_id, end) {
       }
       break;
     }
-    case "reset": {
+    case "reset":
+    case "duplicate":    {
       jQuery("#" + form_id).submit();
       break;
     }
@@ -1405,7 +1409,6 @@ function wds_add_image(files, image_for, slide_id, layer_id) {
       if (typeof layer_id == "undefined") {
         var layer_id = "";
       }
-      console.log(layer_id);
       jQuery("#slide" + slide_id + "_layer" + layer_id).attr('src', files[0]['url']);
       jQuery("#slide" + slide_id + "_layer" + layer_id+"_image_url").val(files[0]['url']);  
       break;
