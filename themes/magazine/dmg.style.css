@@ -189,9 +189,47 @@ a:hover {
   clear: left;
   padding-top: 5px;
 }
+
+.boxInline
+{
+  float: right;
+}
+
+.category-footer
+{
+  float: left;
+  width: 15%;
+  margin-right: 5%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.category-text-footer
+{
+  margin-bottom: 1.25rem;
+  border-bottom: 3px solid #e64946;
+  padding-bottom: 3px;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.text-center
+{
+  text-align: center;
+}
+
 /***** Media Queries *****/
 /** smartphones only **/
 @media only screen and (max-width: 580px) {
+  
+  .category-footer
+  {
+    float: none;
+    width: 100%;
+    margin-right: 5%;
+    margin-top: 10px;
+  }
+
   .category-style
   {
       float: none;
@@ -199,11 +237,13 @@ a:hover {
       margin-right: 5%;
       margin-top: 10px;
   }
+
+  
+
 }
 
 /* Hola mundo!! */
 /* Mensaje de diego 2.0*/
-.boxInline
-{
-  float: right;
-}
+
+
+

@@ -28,7 +28,9 @@
 			<?php if ( ! dynamic_sidebar( 'header-widget-zone' ) ) {} ?>
 		</div>
 		<div>
-			<?php mh_newsdesk_lite_logo(); ?>
+			<a href="http://jilo-magazine.esy.es/" >
+				<img src='wp-content/themes/magazine/images/quehayred470X100.png' alt='Imagen 1' />
+			</a>	
 		</div>
 		
 	</div>
