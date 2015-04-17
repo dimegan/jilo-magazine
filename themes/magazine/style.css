@@ -1,13 +1,13 @@
 /*****
 Theme Name: Magazine theme
-Theme URI: http://www.mhthemes.com/themes/mh/newsdesk-lite/
+Theme URI: localhost.com
 Author: MH Themes (Custom Kevin and Diego)
-Author URI: http://www.mhthemes.com/
-Description: MH Newsdesk is a modern and dynamic news WordPress theme with a beautiful flat design and great flexibility. This news template for WordPress is ideal for up-to-date blogs, online magazines and all kind of other vibrant news websites. MH Newsdesk WordPress theme is focusing on your newsworthy and fresh content. In case you need more features, additional widgets and advanced options to customize your website, you can upgrade to the premium version of MH Newsdesk.
+Author URI: localhost.com
+Description: D&K Theme for magazines
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: mh-newsdesk-lite
+Text Domain: d&k-magazine
 Domain Path: /languages/
 Tags: two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, theme-options, threaded-comments, full-width-template, translation-ready, rtl-language-support
 *****/
@@ -395,4 +395,9 @@ table td { font-size: 12px; font-size: 0.75rem; border: 1px solid #ebebeb; borde
 	.logo-title { font-size: 28px; font-size: 1.75rem; }
 	.logo-tagline { font-size: 12px; font-size: 0.75rem; margin-bottom: 10px; }
 	.sb-widget .search-form .search-field { width: 86%; }
+}
+/*Post content*/
+div.entry-content p{
+  line-height: 160%;
+    font-size: 1.1em;
 }

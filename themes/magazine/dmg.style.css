@@ -200,10 +200,6 @@ a:hover {
       margin-top: 10px;
   }
 }
-
-/* Hola mundo!! */
-/* Mensaje de diego 2.0*/
-.boxInline
-{
-  float: right;
+#wds_container1_0, #wds_container2_0{
+  margin-bottom: 20px;
 }

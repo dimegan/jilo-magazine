@@ -92,8 +92,8 @@ class WDSModelSliders_wds {
         $row->name = '';
       }
       $row->id = $id;
-      $row->width = 800;
-      $row->height = 300;
+      $row->width = 777;//DMG width for jilo-magazine slides
+      $row->height = 380;//DMG height for jilo-magazine slides
       $row->full_width = 0;
       $row->spider_uploader = 1;	  
       $row->bg_fit = 'cover';
