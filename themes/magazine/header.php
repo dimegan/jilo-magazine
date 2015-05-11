@@ -29,7 +29,7 @@
 		</div>
 		<div>
 			<a href="http://jilo-magazine.esy.es/" >
-				<img src='wp-content/themes/magazine/images/quehayred470X100.png' alt='Imagen 1' />
+				<img src='../../../wp-content/themes/magazine/images/quehayred470X100.png' alt='Imagen 1' />
 			</a>	
 		</div>
 		
