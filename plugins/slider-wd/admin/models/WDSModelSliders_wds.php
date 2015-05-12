@@ -92,8 +92,8 @@ class WDSModelSliders_wds {
         $row->name = '';
       }
       $row->id = $id;
-      $row->width = 800;
-      $row->height = 300;
+      $row->width = 777;//DMG width for jilo-magazine slides
+      $row->height = 380;//DMG height for jilo-magazine slides
       $row->full_width = 0;
       $row->spider_uploader = 1;	  
       $row->bg_fit = 'cover';
@@ -150,7 +150,7 @@ class WDSModelSliders_wds {
       $row->enable_time_bar = 1;
       $row->timer_bar_type = 'top';
       $row->timer_bar_size = 5;
-      $row->timer_bar_color = 'FFFFFF';
+      $row->timer_bar_color = 'BBBBBB';
       $row->timer_bar_transparent = 50;
       $row->built_in_watermark_type = 'none';
       $row->built_in_watermark_position = 'middle-center';
@@ -171,11 +171,13 @@ class WDSModelSliders_wds {
       $row->bullets_img_main_url = WD_S_URL . '/images/bullet/bullet1/1/1.png';
       $row->bullets_img_hov_url = WD_S_URL . '/images/bullet/bullet1/1/2.png';
       $row->bull_butt_img_or_not = 'style';
-	  $row->play_paus_butt_img_or_not = 'style';
-	  $row->play_butt_url = WD_S_URL . '/images/button/button4/1/1.png';
-	  $row->play_butt_hov_url = WD_S_URL . '/images/button/button4/1/2.png';
-	  $row->paus_butt_url = WD_S_URL . '/images/button/button4/1/3.png';
-	  $row->paus_butt_hov_url = WD_S_URL . '/images/button/button4/1/4.png';
+      $row->play_paus_butt_img_or_not = 'style';
+      $row->play_butt_url = WD_S_URL . '/images/button/button4/1/1.png';
+      $row->play_butt_hov_url = WD_S_URL . '/images/button/button4/1/2.png';
+      $row->paus_butt_url = WD_S_URL . '/images/button/button4/1/3.png';
+      $row->paus_butt_hov_url = WD_S_URL . '/images/button/button4/1/4.png';
+      $row->start_slide_num = 1;
+      $row->effect_duration = 800;
     }
     return $row;
   }
