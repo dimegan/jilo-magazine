@@ -28,8 +28,8 @@
 			<?php if ( ! dynamic_sidebar( 'header-widget-zone' ) ) {} ?>
 		</div>
 		<div>
-			<a href="<?php the_permalink();?>" >
-				<img src='../../../wordpress/wp-content/themes/magazine/images/quehayred470X100.png' alt='Imagen 1' />
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<img src='<?php echo get_template_directory_uri(); ?>/images/quehayred470X100.png' alt='Imagen 1' />
 			</a>	
 		</div>
 		
