@@ -221,7 +221,6 @@ a:hover {
 /***** Media Queries *****/
 /** smartphones only **/
 @media only screen and (max-width: 580px) {
-  
   .category-footer
   {
     float: none;
@@ -229,7 +228,6 @@ a:hover {
     margin-right: 5%;
     margin-top: 10px;
   }
-
   .category-style
   {
       float: none;
@@ -237,19 +235,58 @@ a:hover {
       margin-right: 5%;
       margin-top: 10px;
   }
-
-  
-
 }
-
 .tptn_counter
 {
     color: #767676;
   font-size: 12px;
 }
-
-/* Hola mundo!! */
-/* Mensaje de diego 2.0*/
-
-
-
+/*footer*/
+#footer-menu li{
+  list-style: none;  
+}
+#footer-menu:after{
+  clear: both;
+}
+#footer-menu li .footer-tab{
+  margin: 10px 30px;
+}
+#footer-menu > li > .footer-tab{
+  font-size: 18px;
+  font-weight: 500;
+  border-bottom: 3px solid #e64946;
+  margin-bottom: 15px;
+}
+#footer-menu > li:nth-child(6){
+  clear: both;
+}
+#footer-menu .sub-menu{
+  margin-top: 5px;
+}
+#footer-menu > li{
+  width: 20%;
+  float: left;
+  padding: 10px 0;
+}
+/*smartphones*/
+@media (max-width: 768px ) { 
+  #footer-menu > li{
+    width: 100%;
+    float: none;
+  }
+}
+/*tables*/
+@media (min-width: 768px) and (max-width: 992px) {
+  #footer-menu > li{
+    width: 33%;
+  }
+  #footer-menu > li:nth-child(6){
+    clear: none;
+  }
+  #footer-menu > li:nth-child(4){
+    clear: both;
+  }
+  #footer-menu > li:nth-child(7){
+    clear: both;
+  }
+}
