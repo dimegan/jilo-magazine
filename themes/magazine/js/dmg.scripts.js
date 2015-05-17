@@ -1,10 +1,10 @@
 jQuery(document).ready(function ($) {
     
-    
-    //Check exist slider container
+        //Check exist slider container
     if($('#slider1_container').length > 0){
         //Define an array of slideshow transition code
         var options = { 
+            $FillMode: 2,
             $AutoPlay: true,
             $SlideDuration: 1000,  
             $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
@@ -50,5 +50,8 @@ jQuery(document).ready(function ($) {
         $(window).bind("orientationchange", ScaleSlider);
 
         //responsive code end
+
+        //after setup slider Show slider in home
+        $("#slider1_container").show();
     }
 });

@@ -77,7 +77,6 @@ if (!function_exists('mh_newsdesk_lite_scripts')) {
 		wp_enqueue_style('mh-font-awesome', get_template_directory_uri() . '/includes/font-awesome.min.css', array(), null);
 		wp_enqueue_style('mh-style', get_stylesheet_uri(), false, '1.0.0');
 		/**** Add slider style ****/
-		wp_enqueue_style('dmg-style', get_template_directory_uri() . '/dmg.style.css', array(), null);
 		wp_enqueue_script('mh-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'));
 		/**** Add slider scripts ****/
 		wp_enqueue_script('jssor-script', get_template_directory_uri() . '/js/jssor.slider.js', array('jquery'));
