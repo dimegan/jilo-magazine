@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
+	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon.ico" />
 <meta charset="<?php bloginfo('charset'); ?>">
 <title><?php wp_title('|', true, 'right'); ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,4 +41,5 @@
 			<?php wp_nav_menu(array('theme_location' => 'main_nav')); ?>
 		</nav>
 	</div>
+
 </header>
