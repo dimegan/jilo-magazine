@@ -704,3 +704,16 @@ div.entry-content p{
 	font-size: 1.2em;
 	font-family: 'Crimson Text', serif;
 }
+
+/*Campaña electoral*/
+a[title="campaña"] {
+  background-color: #CC232A;
+}
+
+a[title="campaña"]:hover {
+background-color: #86151A;
+-webkit-transition:all 1s ease;
+   -moz-transition:all 1s ease;
+   -o-transition:all 1s ease;
+   transition:all 1s ease;
+}
