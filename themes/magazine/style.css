@@ -706,11 +706,11 @@ div.entry-content p{
 }
 
 /*Campaña electoral*/
-a[title="campaña"] {
+#menu-general a[title="campaña"] {
   background-color: #CC232A;
 }
 
-a[title="campaña"]:hover {
+#menu-general a[title="campaña"]:hover {
 background-color: #86151A;
 -webkit-transition:all 1s ease;
    -moz-transition:all 1s ease;
