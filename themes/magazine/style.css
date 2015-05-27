@@ -313,7 +313,7 @@ table td { font-size: 12px; font-size: 0.75rem; border: 1px solid #ebebeb; borde
 
 /***** Footer *****/
 
-.mh-footer { font-size: 12px; font-size: 0.75rem; color: #fff; padding: 10px 0; padding: 0.625rem 0; background: #333; text-transform: uppercase; overflow: hidden; }
+.mh-footer { font-size: 12px; font-size: 0.75rem; color: #fff; padding: 10px 0; padding: 0.625rem 0; background: #1f1e1e; text-transform: uppercase; overflow: hidden; }
 .mh-footer a { color: #fff; }
 .mh-footer a:hover { text-decoration: underline; }
 

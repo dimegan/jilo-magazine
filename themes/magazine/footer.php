@@ -11,5 +11,7 @@
 </footer>
 <p class="copyright text-center">Copyright 2015 Periodico Que hay. Derechos Reservados</p>
 <?php wp_footer(); ?>
+<!-- google analytics code -->
+<?php get_template_part('analyticstracking'); ?>
 </body>
 </html>
