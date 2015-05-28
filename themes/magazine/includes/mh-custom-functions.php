@@ -304,12 +304,67 @@ if (!function_exists('mh_newsdesk_lite_body_class')) {
 add_filter('body_class', 'mh_newsdesk_lite_body_class');
 
 /***** Add CSS3 Media Queries Support for older versions of IE *****/
+function my_excerpt($text, $excerpt){
+	
+	$text = strip_shortcodes( $text );
+	$text = apply_filters('the_content', $text);
+	$text = str_replace(']]>', ']]&gt;', $text);
+	$text = strip_tags($text);
+	$excerpt_length = apply_filters('excerpt_length', 30);
+	$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+	$words = preg_split("/[n
+	]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
+
+	if ( count($words) > $excerpt_length ) {
+		 array_pop($words);
+		 $text = implode(' ', $words);
+		 $text = $text . $excerpt_more;
+	} else {
+	 	$text = implode(' ', $words);
+	}
+	return $text;
+}
 
 function mh_newsdesk_lite_ie_media_queries() {
 	echo '<!--[if lt IE 9]>' . "\n";
 	echo '<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>' . "\n";
 	echo '<![endif]-->' . "\n";
+	jilo_magazine_facebook_metas();
+}
+function jilo_magazine_facebook_metas(){
+	if (is_single()) {
+		//$resumen = get_the_ID();		
+		echo '<meta property="og:title" content="'. get_the_title() .'"/>';
+		echo '<meta property="og:type" content="article"/>';
+		echo '<meta property="og:site_name" content="'. get_bloginfo( 'name' ) .'"/>';
+		echo '<meta property="og:url" content="' . get_the_permalink() .'"/>';
+		
+		$fb_image = wp_get_attachment_image_src(get_post_thumbnail_id( get_the_ID() ), 'thumbnail');
+		if ($fb_image){
+			echo '<meta property="og:image" content="'. $fb_image[0] .'"/>';
+		}
+		///Post description
+		global $post;
+		$description = my_excerpt( $post->post_content, $post->post_excerpt );
+		$description = strip_tags($description);
+		$description = str_replace('"', "'", $description);
+		echo '<meta property="og:description" content="'. $description .'" />';
+	}else{
+		$site_title = get_bloginfo( 'name' );
+		echo '<meta property="og:title" content="'. $site_title .'"/>';
+		echo '<meta property="og:type" content="website"/>';
+		echo '<meta property="og:url" content="' . network_site_url( '/' ) .'"/>';
+		echo '<meta property="og:description" content="'. get_bloginfo( 'description' ) .'" />';
+		echo '<meta property="og:site_name" content="'. $site_title .'"/>';
+	}
 }
 add_action('wp_head', 'mh_newsdesk_lite_ie_media_queries');
 
+//Facebook and Open Graph nameservers
+function add_opengraph_nameser( $output ) {
+ return $output . '
+	xmlns:og="http://opengraphprotocol.org/schema/"
+	xmlns:fb="http://www.facebook.com/2008/fbml"';
+ }
+add_filter('language_attributes', 'add_opengraph_nameser');
 ?>
