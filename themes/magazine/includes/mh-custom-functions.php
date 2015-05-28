@@ -356,6 +356,8 @@ function jilo_magazine_facebook_metas(){
 		echo '<meta property="og:url" content="' . network_site_url( '/' ) .'"/>';
 		echo '<meta property="og:description" content="'. get_bloginfo( 'description' ) .'" />';
 		echo '<meta property="og:site_name" content="'. $site_title .'"/>';
+		$logoImage = get_template_directory_uri() . '/images/quehayred470X100.png';
+		echo '<meta property="og:image" content="'. $logoImage .'"/>';
 	}
 }
 add_action('wp_head', 'mh_newsdesk_lite_ie_media_queries');
