@@ -88,7 +88,7 @@ h1, h2, h3, h4, h5, h6, .mh-footer, .widget-list li, .cat-item, .page_item, .men
 /***** Header *****/
 
 .mh-header { margin-bottom: 30px; }
-.header-wrap { padding: 20px 0; }
+.header-wrap { padding: 20px 0; background-color: #CC232A; }
 .logo-title { font-size: 42px; font-size: 2.625rem; color: #e64946; font-weight: 700; text-transform: uppercase; }
 .logo-tagline { font-size: 16px; font-size: 1.0rem; text-transform: uppercase; }
 
@@ -128,7 +128,7 @@ h1, h2, h3, h4, h5, h6, .mh-footer, .widget-list li, .cat-item, .page_item, .men
 .slicknav_menu { font-size: 13px; font-size: 0.8125rem; }
 .slicknav_menu .slicknav_menutxt { display: none; }
 .slicknav_menu .slicknav_icon-bar { width: 1.5625rem; height: 0.25rem; background: #fff; }
-.slicknav_menu { background: #e64946; border-bottom: 1px solid #fff; }
+.slicknav_menu { background: #1f1e1e; border-bottom: 1px solid #fff; }
 .slicknav_nav { font-size: 16px; font-size: 1rem; font-weight: 400; color: #fff; margin: 0; padding: 0; margin-bottom: 20px; }
 .slicknav_nav, .slicknav_nav ul { list-style: none; overflow: hidden; }
 .slicknav_nav ul { padding: 20px 0 0 15px; border-top: 1px solid #fff; }
@@ -682,6 +682,9 @@ a:hover {
     width: 100%;
     float: none;
   }
+  .header-wrap{
+  	padding: 0;
+  }
 }
 /*tables*/
 @media (min-width: 768px) and (max-width: 992px) {
@@ -707,11 +710,11 @@ div.entry-content p{
 
 /*Campaña electoral*/
 #menu-general a[title="campaña"] {
-  background-color: #CC232A;
+  background-color: #424242;
 }
 
 #menu-general a[title="campaña"]:hover {
-background-color: #86151A;
+background-color: #e64946;
 -webkit-transition:all 1s ease;
    -moz-transition:all 1s ease;
    -o-transition:all 1s ease;
