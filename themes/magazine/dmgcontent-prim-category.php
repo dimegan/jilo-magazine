@@ -2,7 +2,7 @@
  	<!-- post Image-->
     <div class="cp-thumb-xl">
      	<a  href="<?php the_permalink(); ?>" class="category-img">
-            <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'large' ); } ?>
+            <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'content-single' ); } ?>
         </a> 
     </div>
      <!-- post Tittle-->
