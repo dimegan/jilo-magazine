@@ -1,5 +1,6 @@
-<!-- Show the most recent 4 posts-->
-<?php query_posts( 'posts_per_page=3' ); ?>
+<?php $catSlider = get_option( "home_slider-cat", "jilotepec" );?>
+<!--show the post of some category -->
+<?php query_posts('category_name='.$catSlider.'&showposts=3');?>
 <?php if (have_posts()) : ?>
 	<div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 777px; height: 437px;">
         <!-- Loading Screen -->

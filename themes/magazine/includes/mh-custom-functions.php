@@ -304,24 +304,15 @@ if (!function_exists('mh_newsdesk_lite_body_class')) {
 add_filter('body_class', 'mh_newsdesk_lite_body_class');
 
 /***** Add CSS3 Media Queries Support for older versions of IE *****/
-function my_excerpt($text, $excerpt){
-	
-	$text = strip_shortcodes( $text );
+
+function fb_excerpt($text){
+	//$text = get_the_content('');
+	$text = strip_shortcodes($text);
 	$text = apply_filters('the_content', $text);
 	$text = str_replace(']]>', ']]&gt;', $text);
-	$text = strip_tags($text);
-	$excerpt_length = apply_filters('excerpt_length', 30);
-	$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
-	$words = preg_split("/[n
-	]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
-
-	if ( count($words) > $excerpt_length ) {
-		 array_pop($words);
-		 $text = implode(' ', $words);
-		 $text = $text . $excerpt_more;
-	} else {
-	 	$text = implode(' ', $words);
-	}
+	$excerpt_length = apply_filters('excerpt_length', 50);
+	$excerpt_more = apply_filters('excerpt_more', '...');
+	$text = wp_trim_words($text, $excerpt_length, $excerpt_more);
 	return $text;
 }
 
@@ -339,15 +330,15 @@ function jilo_magazine_facebook_metas(){
 		echo '<meta property="og:site_name" content="'. get_bloginfo( 'name' ) .'"/>';
 		echo '<meta property="og:url" content="' . get_the_permalink() .'"/>';
 		
-		$fb_image = wp_get_attachment_image_src(get_post_thumbnail_id( get_the_ID() ), 'thumbnail');
+		$fb_image = wp_get_attachment_image_src(get_post_thumbnail_id( get_the_ID() ), 'full');
 		if ($fb_image){
 			echo '<meta property="og:image" content="'. $fb_image[0] .'"/>';
+			echo '<meta property="og:image:width" content="'. $fb_image[1] .'"/>';
+			echo '<meta property="og:image:height" content="'. $fb_image[2] .'"/>';
 		}
 		///Post description
 		global $post;
-		$description = my_excerpt( $post->post_content, $post->post_excerpt );
-		$description = strip_tags($description);
-		$description = str_replace('"', "'", $description);
+		$description = fb_excerpt( $post->post_content );
 		echo '<meta property="og:description" content="'. $description .'" />';
 	}else{
 		$site_title = get_bloginfo( 'name' );
@@ -356,8 +347,10 @@ function jilo_magazine_facebook_metas(){
 		echo '<meta property="og:url" content="' . network_site_url( '/' ) .'"/>';
 		echo '<meta property="og:description" content="'. get_bloginfo( 'description' ) .'" />';
 		echo '<meta property="og:site_name" content="'. $site_title .'"/>';
-		$logoImage = get_template_directory_uri() . '/images/quehayred470X100.png';
+		$logoImage = get_template_directory_uri() . '/images/logo-periodico.jpg';
 		echo '<meta property="og:image" content="'. $logoImage .'"/>';
+		echo '<meta property="og:image:width" content="958"/>';
+		echo '<meta property="og:image:height" content="315"/>';
 	}
 }
 add_action('wp_head', 'mh_newsdesk_lite_ie_media_queries');
