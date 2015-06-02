@@ -36,11 +36,12 @@ if (!function_exists('mh_newsdesk_lite_themes_setup')) {
 		add_theme_support('html5', array( 'search-form'));
 		add_theme_support('custom-background', array('default-color' => 'efefef'));
 		add_theme_support('post-thumbnails');
-
+		/*is used for top 10 plugin*/
 		add_image_size('cp-thumb-small', 120, 67, true);
+		/*is used in slider and single page*/
+		add_image_size('content-single', 777, 437, true);
 		/*DMG: is not used and when is active save extra images*/
 		/*
-		add_image_size('content-single', 777, 437, true);
 		add_image_size('content-list', 260, 146, true);
 		*/
 		register_nav_menus(array(

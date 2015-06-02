@@ -9,10 +9,12 @@
 		<div class="category-style">
 			<?php query_posts('category_name='.$cat1.'&showposts=3');?>
 			 <?php get_template_part('dmgcontent','categories'); ?>
+			<?php wp_reset_query(); ?>
 		</div>
 		<div class="category-style">
 			<?php query_posts('category_name='.$cat2.'&showposts=3');?>
 			 <?php get_template_part('dmgcontent','categories'); ?>
+			 <?php wp_reset_query(); ?>
 		</div>
 	</div>
 	<!-- Sponsor 1-->
@@ -23,10 +25,12 @@
 		<div class="category-style">
 			<?php query_posts('category_name='.$cat3.'&showposts=3');?>
 			 <?php get_template_part('dmgcontent','categories'); ?>
+			 <?php wp_reset_query(); ?>
 		</div>
 		<div class="category-style">
 			<?php query_posts('category_name='.$cat4.'&showposts=3');?>
 			 <?php get_template_part('dmgcontent','categories'); ?>
+			 <?php wp_reset_query(); ?>
 		</div>
 	</div>
 	<!-- Sponsor 1-->
