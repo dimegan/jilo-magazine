@@ -31,62 +31,19 @@
 					</div>
 
 					<div class=" icon-social">
-						<a href="http://jilo-magazine.esy.es/" >
+						<a href="https://www.facebook.com/periodicoquehayjilo" >
 							<img src='<?php echo get_template_directory_uri(); ?>/images/facebook.png' alt='Imagen 1' />
 						</a>
-						<a href="http://jilo-magazine.esy.es/" >
+						<a href="https://twitter.com/Quehayen" >
 							<img src='<?php echo get_template_directory_uri(); ?>/images/twiter.png' alt='Imagen 1' />
 						</a>
-						<a href="http://jilo-magazine.esy.es/" >
-							<img src='<?php echo get_template_directory_uri(); ?>/images/youtube.png' alt='Imagen 1' />
-						</a>
-						<a href="http://jilo-magazine.esy.es/" >
+						<a href="https://plus.google.com/102245833833633947019/posts" >
 							<img src='<?php echo get_template_directory_uri(); ?>/images/google.png' alt='Imagen 1' />
 						</a>
+						<a href="https://www.youtube.com/user/periodicoquehay" >
+							<img src='<?php echo get_template_directory_uri(); ?>/images/youtube.png' alt='Imagen 1' />
+						</a>
 					</div>
-
-					<div class="directory">
-						<li>
-							<h3 class="title-directory">Directorio</h3>
-						</li>
-						<li>
-							<string class="range-directory">Director y Editor General</string>
-							</br>
-							<string class="name-directory">Prof. Arturo Chávez V.</string>
-						</li>
-						<li>
-							<string class="range-directory">Distribución, Publicidad y Ventas</string>
-							</br>
-							<string class="name-directory">Raúl Cadena</string>
-							</br>
-							<string class="name-directory">Karla Maldonado Sánchez</string>
-						</li>
-						<li>
-							<string class="range-directory">Arte y Diseño</string>
-							</br>
-							<string class="name-directory">Marco Jiménez R.</string>
-						</li>
-						<li>
-							<string class="range-directory">Colaboradores</string>
-							</br>
-							<string class="name-directory">Prof. Francisco González Con</string>
-							</br>
-							<string class="name-directory">Ma. Guadalupe Huicochea E.</string>
-							</br>
-							<string class="name-directory">Benjamín Arredondo</string>
-						</li>
-						<li>
-							<string class="range-directory">Fotógrafo</string>
-							</br>
-							<string class="name-directory">Alan Farid Sánchez Molina</string>
-						</li>
-						<li>
-							<string class="range-directory">Asesor Jurídico</string>
-							</br>
-							<string class="name-directory">Lic. Octavio Maldonado Rodea</string>
-						</li>
-					</div>
-
 				</ul>
 			</div>
 			<div class="footer-space2">
@@ -102,7 +59,7 @@
 	</div>
 	
 </footer>
-<p class="copyright text-center">Copyright 2015 Periodico Que hay. Derechos Reservados</p>
+<p class="copyright text-center">Copyright 2015 Periódico Que hay. Derechos Reservados</p>
 <?php wp_footer(); ?>
 <!-- google analytics code -->
 <?php get_template_part('analyticstracking'); ?>

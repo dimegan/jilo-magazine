@@ -647,10 +647,10 @@ a:hover {
 
 .contact-footer{
 	padding: 5px 30px 5px 30px;
-  font-size: 13px;
+  font-size: 17px;
   text-transform: initial;
   background-color: #e64946;
-  width: 50%;
+  width: 66%;
 }
 
 .icon-social{
@@ -727,7 +727,7 @@ a:hover {
 }
 
 .size-image-icon{
-	width: 10%;
+	width: 12%;
 }
 
 /*smartphones*/
@@ -744,6 +744,12 @@ a:hover {
   	float: left;
   	width: 100%;
   }
+
+  .contact-footer
+  {
+  	font-size: 12px;
+  }
+
 }
 /*tables*/
 @media (min-width: 768px) and (max-width: 992px) {
@@ -759,6 +765,13 @@ a:hover {
   #footer-menu > li:nth-child(7){
     clear: both;
   }
+
+  .contact-footer
+  {
+  	font-size: 12px;
+  	width: 69%;
+  }
+
 }
 /*Post content*/
 div.entry-content p{
