@@ -34,6 +34,8 @@
 			<?php get_template_part('template', 'authorbox'); ?>
 			<?php endwhile; ?>
 		<?php endif; ?>
+		<!-- PUBLICIDAD SINGLE FOOTER -->
+		<?php dynamic_sidebar('single-footer'); ?>
 		<!-- COMMENT DIRECTION -->
 		<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-numposts="5" data-colorscheme="light">
 		</div>

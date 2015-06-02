@@ -19,7 +19,7 @@
 	</div>
 	<!-- Sponsor 1-->
 	<div id="sponsor-one">
-		<?php dynamic_sidebar('home-1'); ?>
+		<?php dynamic_sidebar('home-middle'); ?>
 	</div>
 	<div class="clearfix">
 		<div class="category-style">
@@ -35,6 +35,6 @@
 	</div>
 	<!-- Sponsor 1-->
 	<div id="sponsor-two">
-		<?php dynamic_sidebar('home-2'); ?>
+		<?php dynamic_sidebar('home-footer'); ?>
 	</div>
 </div>

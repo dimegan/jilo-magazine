@@ -102,12 +102,13 @@ add_action('admin_enqueue_scripts', 'mh_newsdesk_lite_admin_scripts');
 /***** Register Widget Areas / Sidebars	*****/
 
 if (!function_exists('mh_newsdesk_lite_widgets_init')) {
-	function mh_newsdesk_lite_widgets_init() {	
-
-		register_sidebar(array('name' => __('Global Sidebar', 'mh-newsdesk-lite'), 'id' => 'sidebar', 'description' => __('Sidebar used for sponsor.', 'mh-newsdesk-lite'), 'before_widget' => '<div class="sb-widget clearfix">', 'after_widget' => '</div>', 'before_title' => '<h4 class="widget-title"><span>', 'after_title' => '</span></h4>'));
-		register_sidebar(array('name' => __('Home - Sponsor in the middle', 'mh-newsdesk-lite'), 'id' => 'home-1', 'description' => __('Large column on Homepage.', 'mh-newsdesk-lite'), 'before_widget' => '<div class="sb-widget">', 'after_widget' => '</div>', 'before_title' => '<h4 class="widget-title"><span>', 'after_title' => '</span></h4>'));
-		register_sidebar(array('name' => __('Home - Sponsor in the end', 'mh-newsdesk-lite'), 'id' => 'home-2', 'description' => __('Large column on Homepage.', 'mh-newsdesk-lite'), 'before_widget' => '<div class="sb-widget">', 'after_widget' => '</div>', 'before_title' => '<h4 class="widget-title"><span>', 'after_title' => '</span></h4>'));
-		register_sidebar(array('name' => __('Single - Sponsor in the end', 'mh-newsdesk-lite'), 'id' => 'single-1', 'description' => __('Large column on Homepage.', 'mh-newsdesk-lite'), 'before_widget' => '<div class="sb-widget">', 'after_widget' => '</div>', 'before_title' => '<h4 class="widget-title"><span>', 'after_title' => '</span></h4>'));
+	function mh_newsdesk_lite_widgets_init() {			
+		register_sidebar(array('name' => __('Sitio - Columna Derecha', 'mh-newsdesk-lite'), 'id' => 'sidebar', 'description' => __('Sidebar used for sponsor.', 'mh-newsdesk-lite'), 'before_widget' => '<div class="sb-widget clearfix">', 'after_widget' => '</div>', 'before_title' => '<h4 class="widget-title"><span>', 'after_title' => '</span></h4>')); 
+		register_sidebar(array('name' => __('Home - Anuncios mitad de pagina', 'mh-newsdesk-lite'), 'id' => 'home-middle', 'description' => __('Large column on Homepage.', 'mh-newsdesk-lite'), 'before_widget' => '<div class="sb-widget">', 'after_widget' => '</div>', 'before_title' => '<h4 class="widget-title"><span>', 'after_title' => '</span></h4>'));
+		register_sidebar(array('name' => __('Home - Anuncios final de pagina', 'mh-newsdesk-lite'), 'id' => 'home-footer', 'description' => __('Large column on Homepage.', 'mh-newsdesk-lite'), 'before_widget' => '<div class="sb-widget">', 'after_widget' => '</div>', 'before_title' => '<h4 class="widget-title"><span>', 'after_title' => '</span></h4>'));
+		register_sidebar(array('name' => __('Home - Columna Derecha', 'mh-newsdesk-lite'), 'id' => 'home-sidebar', 'description' => __('Large column on Homepage.', 'mh-newsdesk-lite'), 'before_widget' => '<div class="sb-widget">', 'after_widget' => '</div>', 'before_title' => '<h4 class="widget-title"><span>', 'after_title' => '</span></h4>'));
+		register_sidebar(array('name' => __('Articulo - Anuncios final pagina', 'mh-newsdesk-lite'), 'id' => 'single-footer', 'description' => __('Large column on Homepage.', 'mh-newsdesk-lite'), 'before_widget' => '<div class="sb-widget">', 'after_widget' => '</div>', 'before_title' => '<h4 class="widget-title"><span>', 'after_title' => '</span></h4>'));
+		register_sidebar(array('name' => __('Articulo - Columna Derecha', 'mh-newsdesk-lite'), 'id' => 'single-sidebar', 'description' => __('Large column on Homepage.', 'mh-newsdesk-lite'), 'before_widget' => '<div class="sb-widget">', 'after_widget' => '</div>', 'before_title' => '<h4 class="widget-title"><span>', 'after_title' => '</span></h4>'));
 
 		$args = array(
 	        'name'          => 'Header Widget Zone',
