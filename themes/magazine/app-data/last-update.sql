@@ -2,3 +2,4 @@ INSERT INTO wp_options(option_name, option_value, autoload) VALUES('home_cat1','
 INSERT INTO wp_options(option_name, option_value, autoload) VALUES('home_cat2','atlacomulco', 'yes');
 INSERT INTO wp_options(option_name, option_value, autoload) VALUES('home_cat3','tula-tepeji', 'yes');
 INSERT INTO wp_options(option_name, option_value, autoload) VALUES('home_cat4','aculco', 'yes');
+INSERT INTO wp_options(option_name, option_value, autoload) VALUES('home_slider-cat','carrusel', 'yes');
