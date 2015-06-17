@@ -839,3 +839,30 @@ background-color: #e64946;
 .post-relation-by-category{
 	margin-top: 25px;
 }
+/*Avisos oportunos home*/
+#aviso-wrapper{
+  	background-color: #1f1e1e;
+	padding: 20px;
+}
+.widget-aviso-title a{
+	color: #fff;
+	font-size: 1.5em;
+	text-align: center;
+	margin-bottom: 1.25rem;
+}
+.aviso-item{
+	position: relative;
+}
+.aviso-title{
+	position: absolute;
+	bottom: 10px;
+	-webkit-font-smoothing: antialiased;
+	width: 100%;
+	background-color: #000;
+  	opacity: 0.8;
+}
+.aviso-title a{
+	color: #fff;
+	padding: 5px 10px 10px 10px;
+	display: block;
+}
