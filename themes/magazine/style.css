@@ -498,7 +498,7 @@ a:hover {
 }
 
 .widget-title, .footer-widget-title {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   border-bottom: 3px solid #e64946;
   padding-bottom: 3px;
   background-color: #fff;
@@ -522,9 +522,7 @@ a:hover {
 /*** primary post ***/
 .category-img img
 {
-    height: 225px;
     vertical-align: bottom;
-    width: 100%;
 }
 .cp-thumb-xl{
   margin-bottom: 10px;
@@ -841,8 +839,17 @@ background-color: #e64946;
 }
 /*Avisos oportunos home*/
 #aviso-wrapper{
-  	background-color: #1f1e1e;
-	padding: 20px;
+  	/*background-color: #1f1e1e;
+	padding: 20px;*/
+	border: solid #CC232A 5px;
+}
+#aviso-wrapper > h4{
+	background-color: #CC232A;
+	text-align: center;
+  	padding: 5px 0;
+}
+#aviso-list-items{
+	margin: 10px;
 }
 .widget-aviso-title a{
 	color: #fff;

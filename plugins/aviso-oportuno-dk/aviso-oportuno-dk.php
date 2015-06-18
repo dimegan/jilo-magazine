@@ -69,20 +69,6 @@
 		   echo $before_widget;
 		   // Display the widget
 		   echo '<div class="widget-text wp_widget_plugin_box">';
-
-		   // Check if title is set
-		   if ( $title ) {
-		      echo $before_title . $title . $after_title;
-		   }
-
-		   // Check if text is set
-		   if( $text ) {
-		      echo '<p class="wp_widget_plugin_text">'.$text.'</p>';
-		   }
-		   // Check if textarea is set
-		   if( $textarea ) {
-		     echo '<p class="wp_widget_plugin_textarea">'.$textarea.'</p>';
-		   }
 		   
 		   renderPostList();
 
@@ -105,7 +91,8 @@
 		   echo '<div id="aviso-wrapper">';
 		   echo '<h4 class="widget-aviso-title">
 		   			<a href="' . $category_link .'" class="category-title"> Aviso oportuno </a>
-		   		</h4>';
+		   		</h4>
+		   		<div id="aviso-list-items">';
 		   //Start posts loop
 		   if (have_posts()) : while (have_posts()) : the_post();
 		   ?>
@@ -124,20 +111,9 @@
 				     </div>
 		   		</div>
 		   	<?php
-		   		/*echo '<li class="cp-wrap cp-small clearfix">
-					    <div class="cp-thumb">
-					 	  <a class="category-secondary-image" href="#"> ' . $thumbail .'</a> 
-					    </div>
-					     <div class="cp-data">
-					         <p class="cp-widget-title">
-					         	<a class="" href="#" title="'. the_title_attribute() . '" >' . the_title() . '</a>
-					         </p>
-					    </div>
-					 </li> ';*/
-		   		
 		   endwhile; endif;
 		   //End posts loop
-		   echo '</div>';
+		   echo '</div></div>';
 		   wp_reset_query();
 		   //end wp query
 	}
