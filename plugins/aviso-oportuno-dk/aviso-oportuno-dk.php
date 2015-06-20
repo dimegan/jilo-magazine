@@ -79,46 +79,53 @@
 
 	function renderPostList(){
 		//Show list of posts
-		   $cat1 = 'Jilotepec';
-		   //Start wp query
-		   query_posts('category_name='.$cat1.'&showposts=3');
+		$cat1 = get_option( "aviso-cat", "default" );
+	   //Start wp query
+	   query_posts('category_name='.$cat1.'&showposts=3');
 
-		   $currenCatName = single_cat_title("", false);
-		   $category_id = get_cat_ID( $currenCatName );
-		   $category_link = esc_url(get_category_link( $category_id ));
+	   $currenCatName = single_cat_title("", false);
+	   $category_id = get_cat_ID( $currenCatName );
+	   $category_link = esc_url(get_category_link( $category_id ));
 
-		   
-		   echo '<div id="aviso-wrapper">';
-		   echo '<h4 class="widget-aviso-title">
-		   			<a href="' . $category_link .'" class="category-title"> Aviso oportuno </a>
+	   ?>
+	   		<div id="aviso-wrapper">
+		   		<h4 class="widget-aviso-title">
+		   			<a href="<?php echo $category_link; ?>" class="category-title"> 
+		   				<?php echo $currenCatName; ?>
+		   			</a>
 		   		</h4>
-		   		<div id="aviso-list-items">';
-		   //Start posts loop
-		   if (have_posts()) : while (have_posts()) : the_post();
-		   ?>
-		   		<div class="aviso-item">
-		   			<div class="cp-thumb-xl">
-				     	<a  href="<?php the_permalink(); ?>" class="category-img">
-				            <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'content-single' ); } ?>
-				        </a> 
-				    </div>
-				    <div class="aviso-title">
-					    <h4>
-					     	<a href="<?php the_permalink();?>" title="<?php the_title_attribute();?>" >
-					            <?php the_title();  ?>
-					        </a>
-					     </h4>
-				     </div>
-		   		</div>
-		   	<?php
-		   endwhile; endif;
-		   //End posts loop
-		   echo '</div></div>';
-		   wp_reset_query();
-		   //end wp query
+		   		<div id="aviso-list-items">
+	   <?php
+	   //Start posts loop
+	   if (have_posts()) : while (have_posts()) : the_post();
+	   ?>
+	   		<div class="aviso-item">
+	   			<div class="cp-thumb-xl">
+			     	<a  href="<?php the_permalink(); ?>" class="category-img">
+			            <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'content-single' ); } ?>
+			        </a> 
+			    </div>
+			    <div class="aviso-title">
+				    <h4>
+				     	<a href="<?php the_permalink();?>" title="<?php the_title_attribute();?>" >
+				            <?php the_title();  ?>
+				        </a>
+				     </h4>
+			     </div>
+	   		</div>
+	   	<?php
+	   endwhile; endif;
+	   //End posts loop
+	   wp_reset_query();
+	   //end wp query
+	   ?>
+	   			<h4 class="link-mas">
+	   				<a href="<?php echo $category_link; ?>">Ver mas avisos oportunos</a>
+	   			</h4>
+	   		</div><!--End aviso-list-items -->
+   		</div><!-- End aviso-wrapper-->
+	   <?php 
 	}
-
 	// register widget
 	add_action('widgets_init', create_function('', 'return register_widget("Aviso_Oportuno_Widget");'));
 ?>
-

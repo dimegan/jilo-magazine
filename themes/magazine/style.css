@@ -873,3 +873,9 @@ background-color: #e64946;
 	padding: 5px 10px 10px 10px;
 	display: block;
 }
+#aviso-list-items .link-mas { 
+	text-align: center;
+}
+#aviso-list-items .link-mas a{ 
+	text-decoration: underline;
+}
