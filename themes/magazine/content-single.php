@@ -1,9 +1,9 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php 
-		$cat1 = get_option( "aviso-cat", "default" );
-		//Mostrar la imagen representativa cuando el post NO es de Aviso Oportuno
-		$showFullImage = !has_category( $cat1 );
-	?>
+<?php 
+	$cat1 = get_option( "aviso-cat", "default" );
+	//Mostrar la imagen representativa cuando el post NO es de Aviso Oportuno
+	$showFullImage = !has_category( $cat1 );
+?>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>	
 	<header class="entry-header clearfix">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 		<?php the_tags('<div class="entry-tags clearfix"><span>' . __('TOPICS:', 'mh-newsdesk-lite') . '</span>','','</div>'); ?>
@@ -17,3 +17,4 @@
 		<?php the_content(); ?>
 	</div>
 </article>
+<?php get_template_part('posts', 'related'); ?>

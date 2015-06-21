@@ -3,46 +3,7 @@
 	<div id="main-content" class="mh-content">
 		<?php mh_newsdesk_lite_before_post_content(); ?>
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<?php get_template_part('content', 'single'); ?>
-
-		<!-- POST RELACIONADOS POR CATEGORIA -->
-		<div class="post-relation-by-category">
-			<span class="lblpost-relation">¿Que más hay en 
-				<?php $category = get_the_category();
-				$firstCategory = $category[0]->cat_name; 
-				echo $firstCategory;?> ?
-			</span>
-			
-			<div class="post-relation">
-				<?php if ( is_single() ) { // Si es un single post
-					 $cat = the_category_ID(FALSE) ; // El id de la categoría, el (FALSE) es para que no escriba el número
-					 $post = get_the_ID(); // El id del current post
-					 $args = array( // La variable
-						'cat'=>$cat, // El id de la categoría que buscamos arriba
-						'showposts' => 4, // El número de posts que se van a listar
-						'post__not_in' => array($post) // Llama al id del post actual para que no sea listado
-						);
-					?>
-					
-						<div>
-							<ul>
-							 <?php $recent = new WP_Query($args); while($recent->have_posts()) : $recent->the_post();?>
-								 <li class="post-relation-li">
-								 	<div class="div-post-relation">
-								 		<?php the_post_thumbnail( 'thumbnail', $attr ); ?>
-								 	</div>
-								 	<span >
-								 		<a class="tittle-post-relation" href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
-								 	</span>
-
-								 </li>
-								 
-							 <?php endwhile; ?>
-							</ul>
-						</div>
-				<?php } ?>
-			</div>
-		</div>
+			<?php get_template_part('content', 'single'); ?>			
 			</br>
 			<!-- SHARE BUTTON -->
 			<div class="fb-like" data-href="<?php the_permalink(); ?>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
