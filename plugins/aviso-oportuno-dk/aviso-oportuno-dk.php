@@ -81,7 +81,7 @@
 		//Show list of posts
 		$cat1 = get_option( "aviso-cat", "default" );
 	   //Start wp query
-	   query_posts('category_name='.$cat1.'&showposts=4');
+	   query_posts('category_name='.$cat1.'&showposts=3');
 
 	   $currenCatName = single_cat_title("", false);
 	   $category_id = get_cat_ID( $currenCatName );

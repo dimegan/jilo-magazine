@@ -782,6 +782,17 @@ div.entry-content p{
 	font-family: 'Crimson Text', serif;
 }
 
+.aviso-content .entry-title{
+	font-size: 36px;
+	text-transform: inherit;
+}
+
+.aviso-content div.entry-content p{
+	line-height: 160%;
+	font-size: inherit;
+	font-family: inherit;
+}
+
 /*Campaña electoral*/
 #menu-general a[title="campaña"] {
   background-color: #424242;
