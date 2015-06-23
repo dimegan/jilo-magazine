@@ -1,17 +1,31 @@
-<?php $category = get_the_category();
-	$firstCategory = $category[0]->cat_name; 
-	$cat = get_cat_ID($firstCategory) ; // El id de la categoría, el (FALSE) es para que no escriba el número
-	$post = get_the_ID(); // El id del current post?>
+<?php 
+	$catSlider = get_option( "home_slider-cat", "default" );
+	//Mostrar la imagen representativa cuando el post NO es de Aviso Oportuno
+	$categories = get_the_category();
+	if($categories){
+		foreach($categories as $category) {
+			if($category->cat_name !== $catSlider ){
+				$firstCategory = $category->cat_name; 		
+				break;
+			}
+		}		
+		if(isset($firstCategory)){
+			$cat = get_cat_ID($firstCategory) ; // El id de la categoría, el (FALSE) es para que no escriba el número
+			$post = get_the_ID(); // El id del current post
+		}
+	}
+?>
+<?php if(isset($cat) && isset($firstCategory)): ?>
 <!-- POST RELACIONADOS POR CATEGORIA -->
 <div class="post-relation-by-category">
-	<span class="lblpost-relation">¿Que más hay en 
+	<h3>¿Que más hay en 
 		<?php echo $firstCategory ?>?
-	</span>	
+	</h3>	
 	<div class="related-posts clearfix">
 		<?php if ( is_single() ): // Si es un single post
 			 $args = array( // La variable
 				'cat'=>$cat, // El id de la categoría que buscamos arriba
-				'showposts' => 4, // El número de posts que se van a listar
+				'showposts' => 3, // El número de posts que se van a listar
 				'post__not_in' => array($post) // Llama al id del post actual para que no sea listado
 				);
 			?>
@@ -31,7 +45,7 @@
 					 		<a class="tittle-post-relation" href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
 					 	</span>
 					 	<br/>
-					 	<?php the_date('d F, Y','<span class="meta-data">','</span>'); ?>
+					 	<span class="meta-data"><?php the_time('j F, Y'); ?> </span>
 				 	</div>
 				 </li>
 				 
@@ -43,3 +57,4 @@
 	</div>
 <!-- end post-relation-by-category -->
 </div>
+<?php endif; ?>
