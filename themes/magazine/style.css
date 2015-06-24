@@ -775,22 +775,23 @@ a:hover {
   }
 
 }
-/*Post content*/
+/*Post content (single)*/
 div.entry-content p{
 	line-height: 160%;
 	font-size: 1.2em;
 	font-family: 'Crimson Text', serif;
 }
-
 .aviso-content .entry-title{
 	font-size: 36px;
 	text-transform: inherit;
 }
-
 .aviso-content div.entry-content p{
 	line-height: 160%;
 	font-size: inherit;
 	font-family: inherit;
+}
+.facebook-widget{
+	margin: 10px 0;
 }
 
 /*Campaña electoral*/
@@ -832,7 +833,7 @@ background-color: #e64946;
   text-decoration: none;
 }
 .post-relation-by-category{
-	margin-top: 25px;
+	margin-top: 15px;
 }
 
 .related-info{

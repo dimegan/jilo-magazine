@@ -11,7 +11,7 @@
          <p class="cp-widget-title">
          	<a class="" href="<?php the_permalink();?>" title="<?php the_title_attribute();?>" ><?php the_title(); ?></a>
          </p>
-         <p class="meta"> <?php echo($numComments . ' Comentarios'); ?></p>
+         <p class="category-date"><?php the_time('F d, Y');?></p>
     </div>
  </li> 
  

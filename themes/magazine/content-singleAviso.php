@@ -8,4 +8,3 @@
 		<?php the_content(); ?>
 	</div>
 </article>
-<?php get_template_part('posts', 'related'); ?>

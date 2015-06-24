@@ -4,4 +4,4 @@ INSERT INTO wp_options(option_name, option_value, autoload) VALUES('home_cat3','
 INSERT INTO wp_options(option_name, option_value, autoload) VALUES('home_cat4','aculco', 'yes');
 INSERT INTO wp_options(option_name, option_value, autoload) VALUES('home_slider-cat','carrusel', 'yes');
 INSERT INTO wp_options(option_name, option_value, autoload) VALUES('aviso-cat','aviso-oportuno', 'yes');
-INSERT INTO wp_options(option_name, option_value, autoload) VALUES('galeria-imagenes','Galería de imágenes', 'yes');
+INSERT INTO wp_options(option_name, option_value, autoload) VALUES('galeria-img','galeria-imagenes', 'yes');

@@ -5,33 +5,6 @@
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<?php get_template_part('content', 'single'); ?>			
 			</br>
-			<!-- SHARE BUTTON -->
-			<div class="fb-like" data-href="<?php the_permalink(); ?>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-			<!-- END SHARE BUTTON -->
-
-			<?php
-			//para poner en el loop, muestra 5 titulos de post relacionados con la primera tag del post actual
-			$tags = wp_get_post_tags($post->ID);
-			if ($tags) {
-			  echo 'Post relacionados';
-			  $first_tag = $tags[0]->term_id;
-			  $args=array(
-			    'tag__in' => array($first_tag),
-			    'post__not_in' => array($post->ID),
-			    'showposts'=>5,
-			    'caller_get_posts'=>1
-			   );
-			  $my_query = new WP_Query($args);
-			  if( $my_query->have_posts() ) {
-			    while ($my_query->have_posts()) : $my_query->the_post(); ?>
-			      <p><a href="<?php the_permalink() ?>" rel="bookmark" title="Enlace permanente a <?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
-			      <?php
-			    endwhile;
-			  }
-			}
-			?>
-			
-			<?php mh_newsdesk_lite_postnav(); ?>
 			<?php get_template_part('template', 'authorbox'); ?>
 			<?php endwhile; ?>
 		<?php endif; ?>
@@ -41,10 +14,7 @@
 
 		<!-- PUBLICIDAD SINGLE FOOTER -->
 		<?php dynamic_sidebar('single-footer'); ?>
-		<!-- COMMENT DIRECTION -->
-		<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-numposts="5" data-colorscheme="light">
-		</div>
-		<!-- END COMMENT DIRECTION -->
+		
 	</div>
 	<?php get_sidebar(); ?>
 </div>
