@@ -20,7 +20,7 @@ function spider_ajax_save(form_id, event) {
   post_data["align"] = jQuery("#align").val();
   post_data["effect"] = jQuery("#effect").val();
   post_data["time_intervval"] = jQuery("#time_intervval").val();
-  post_data["autoplay"] = jQuery("input[name=autoplay]:checked").val();
+  post_data["autoplay"] = 1;/*default autoplay*/
   post_data["stop_animation"] = jQuery("input[name=stop_animation]:checked").val();
   post_data["shuffle"] = jQuery("input[name=shuffle]:checked").val();
   post_data["music"] = jQuery("input[name=music]:checked").val();
