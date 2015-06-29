@@ -610,6 +610,12 @@ function tptn_pop_posts( $args ) {
 	$where .= $wpdb->prepare( " AND blog_id = %d ", $blog_id );				// Posts need to be from the current blog only
 	$where .= " AND $wpdb->posts.post_status = 'publish' ";					// Only show published posts
 
+	//DMG: Mostrar el top de los posts creados hace 14 días
+	$postDate = new DateTime();
+	$postDate->sub(new DateInterval('P15D'));
+	$mysql_date = date('Y-m-d H:i:s', $postDate->getTimestamp());
+	$where .= $wpdb->prepare( " AND post_date > '%s' ", $mysql_date );
+
 	if ( $daily ) {
 		$where .= $wpdb->prepare( " AND dp_date >= '%s' ", $from_date );	// Only fetch posts that are tracked after this date
 	}
@@ -896,7 +902,7 @@ function tptn_pop_posts( $args ) {
 				$output .= '
 						<p class="entry-meta">
 							<span class="updated">' 
-								. $post_details . 
+								. $post_details .
 							'</span>
 						</p>
 						<h3 class="cp-title-small">
